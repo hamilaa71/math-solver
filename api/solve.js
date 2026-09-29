@@ -34,56 +34,34 @@ JSON 형식 예시:
   "title": "공통수학1 · 이차방정식과 이차함수",
   "isExample": false,
   "problemHtml": "이차함수 $y = x^2 - 4x + k$의 그래프가 $x$축과 서로 다른 두 점에서 만나도록 하는 실수 $k$의 값의 범위를 구하시오.",
-  "approach": "그래프와 $x$축의 교점 개수는 이차방정식 $x^2 - 4x + k = 0$의 실근 개수와 같아요. 판별식으로 조건을 식으로 바꿔 봅시다.",
+  "approach": "그래프와 $x$축의 교점 개수는 이차방정식 $x^2 - 4x + k = 0$의 실근 개수와 같아요.",
   "steps": [
     {
       "title": "교점을 방정식으로 바꾸기",
       "hint": "이차함수 $y = f(x)$가 $x$축과 만나는 점의 $x$좌표는 방정식 $f(x)=0$의 실근입니다.",
-      "content": "이차함수 $y = x^2 - 4x + k$의 그래프가 $x$축과 만나는 점의 $x$좌표는 방정식 $x^2 - 4x + k = 0$의 실근과 같습니다. 서로 다른 두 점에서 만나므로 판별식 $D > 0$이어야 합니다."
-    },
-    {
-      "title": "판별식 $D$ 계산하기",
-      "hint": "짝수 판별식 $D/4 = b'^2 - ac$를 이용하면 편리해요.",
-      "content": "$D/4 = (-2)^2 - 1 \\cdot k = 4 - k > 0$"
-    },
-    {
-      "title": "범위 구하기 및 정답 도출",
-      "hint": "부등식을 $k$에 대해 정리하세요.",
-      "content": "$4 - k > 0 \\implies k < 4$ 따라서 구하는 실수 $k$의 범주는 $k < 4$입니다."
+      "content": "이차함수 $y = x^2 - 4x + k$의 그래프가 $x$축과 만나는 점의 $x$좌표는 방정식 $x^2 - 4x + k = 0$의 실근과 같습니다."
     }
   ],
   "finalAnswer": "k < 4",
-  "answerExplanation": "$y = x^2 - 4x + k$에서 $x$축과 서로 다른 두 점에서 만나려면 판별식 $D > 0$이어야 합니다. $D/4 = 4 - k > 0$ 이므로 $k < 4$입니다.",
+  "answerExplanation": "$y = x^2 - 4x + k$에서 $x$축과 서로 다른 두 점에서 만나려면 판별식 $D > 0$이어야 합니다.",
   "concepts": [
     {
       "title": "판별식",
       "formula": "D = b^2 - 4ac",
-      "desc": "$D > 0$이면 서로 다른 두 실근, $D = 0$이면 중근, $D < 0$이면 서로 다른 두 허근을 가져요."
-    },
-    {
-      "title": "그래프와 x축의 위치 관계",
-      "formula": "y = ax^2 + bx + c",
-      "desc": "$x$축과의 교점 개수는 방정식 $ax^2 + bx + c = 0$의 실근 개수와 같습니다."
+      "desc": "$D > 0$이면 서로 다른 두 실근을 가져요."
     }
   ],
   "similarProblems": [
     {
       "level": "쉬움",
       "text": "이차함수 $y = x^2 + 2x + k$의 그래프가 $x$축과 만나지 않도록 하는 실수 $k$의 값의 범위를 구하시오.",
-      "hint": "만나지 않으므로 판별식 $D < 0$이어야 합니다.",
+      "hint": "판별식 $D < 0$이어야 합니다.",
       "answer": "k > 1"
-    },
-    {
-      "level": "비슷",
-      "text": "이차함수 $y = x^2 - 2kx + 4$의 그래프가 $x$축에 접할 때, 양수 $k$의 값을 구하시오.",
-      "hint": "접하므로 판별식 $D = 0$입니다.",
-      "answer": "2"
     }
   ]
 }
 `;
 
-    // Gemini API 호출
     const geminiResponse = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
       {
